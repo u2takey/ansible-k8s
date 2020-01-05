@@ -1,0 +1,7 @@
+---
+- name: example k8s playbook
+  hosts: test
+  vars:
+    namespace: default
+  roles:
+  - nginx

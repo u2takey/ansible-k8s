@@ -1,0 +1,10 @@
+---
+- name: nginx deployment 
+  k8s:
+    definition: "{{ lookup('template', 'nginx-deployment.yml.j2')  }}"
+    namespace: "{{ meta.namespace }}"
+- name: nginx service 
+  k8s:
+    definition: "{{ lookup('template', 'nginx-service.yml.j2')  }}"
+    namespace: "{{ meta.namespace }}"
+    

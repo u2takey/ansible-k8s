@@ -1,0 +1,16 @@
+---
+- debug: var=context
+- name: set namespace {{ namespace }} to {{ state }}
+  k8s:
+    context: "{{ context }}"
+    api_version: v1
+    kind: Namespace
+    name: "{{ namespace }}"
+    state: "{{ state }}"
+  ignore_errors: true
+- name: set nginx deployment to {{ state }}
+  k8s:
+    context: "{{ context }}"
+    state: "{{ state }}"
+    definition: "{{ lookup('template', 'nginx.yml.j2') | from_yaml_all | list  }}"
+    namespace: "{{ namespace }}"

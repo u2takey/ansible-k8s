@@ -1,0 +1,9 @@
+apiVersion: nginx.operator.t.io/v1
+kind: Nginx
+metadata:
+  name: example-nginx
+spec:
+  # Add fields here
+  replicas: 3
+  cpu: 100m
+  memory: 100M

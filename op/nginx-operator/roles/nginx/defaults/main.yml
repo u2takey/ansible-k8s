@@ -1,0 +1,5 @@
+---
+# defaults file for nginx
+replicas: 1
+cpu: 100m
+memory: 100M

@@ -1,0 +1,4 @@
+---
+# defaults file for nginx
+state: present
+namespace: default

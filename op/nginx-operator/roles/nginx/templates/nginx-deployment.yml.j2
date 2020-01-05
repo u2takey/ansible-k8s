@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ meta.name }}
+  namespace: {{ meta.namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ meta.name }}
+  replicas: {{ replicas }}
+  template:
+    metadata:
+      labels:
+        app: {{ meta.name }}
+    spec:
+      containers:
+        - name: {{ meta.name }}
+          image: nginx
+          resources:
+            requests:
+              memory: {{ memory }}
+              cpu: {{ cpu }}
+            limits:
+              memory: {{ memory }}
+              cpu: {{ cpu }}
